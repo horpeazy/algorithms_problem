@@ -1,0 +1,6 @@
+# Time Complexity
+    The time complexity of sqrt is entirely dependent on the time complexity of the sqrt_helper
+    recursive function which has a time complexity of O(logn)
+
+# Space Complexity
+    The space complexity is of the soluyion is O(1)
