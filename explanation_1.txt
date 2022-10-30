@@ -3,4 +3,4 @@
     recursive function which has a time complexity of O(logn)
 
 # Space Complexity
-    The space complexity is of the soluyion is O(1)
+    The space complexity is of the solution is O(1)
