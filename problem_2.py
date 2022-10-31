@@ -12,9 +12,10 @@ def rotated_array_search(input_list, number):
 
     return rotated_binary_search(input_list, number, start_index, end_index)
 
+
 def rotated_binary_search(arr, target, start, end):
     """
-    Recursive function to search rotated sorted array
+    Recursive function for searching rotated sorted array
 
     Args:
         arr(array): Input array to search
@@ -34,7 +35,7 @@ def rotated_binary_search(arr, target, start, end):
     if arr[mid] == target:
         return mid
     elif target >= arr[start]:
-        # if the end index element is less than target or mid index element is 
+        # if the end index element is less than target or mid index element is
         # greater than target then the target could be on the left
         if arr[end] < target or arr[mid] > target:
             return rotated_binary_search(arr, target, start, mid-1)
@@ -49,19 +50,27 @@ def linear_search(input_list, number):
             return index
     return -1
 
+
 def test_function(test_case):
     input_list = test_case[0]
     number = test_case[1]
-    if linear_search(input_list, number) == rotated_array_search(input_list, number):
+    if (linear_search(input_list, number) ==
+            rotated_array_search(input_list, number)):
+        print("Pass")
         return True
     else:
+        print("Fail")
         return False
+
 
 # Test case 1
 assert test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
+# >>> Pass
 
-#Test case 2
+# Test case 2
 assert test_function([[6, 7, 8, 1, 2, 3, 4], 8])
+# >>> Pass
 
 # Test 3
 assert test_function([[6, 6, 6, 7, 8, 1, 2, 3, 4], 10])
+# >>> Pass

@@ -1,6 +1,6 @@
 # Time Complexity
     The time complexity of rotated_array_search is entirely dependent on the time complexity of the
-    rotated_binary_search recursive function which has a time complexity of O(logn) since it mimicks the
+    rotated_binary_search recursive function which has a time complexity of O(log(n)) since it mimicks the
     binary search with some tweaking
 
 # Space Complexity

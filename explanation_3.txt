@@ -1,0 +1,9 @@
+# Time Complexity
+    The time complexity of rearrange_digits is partially dependent on the complexity of the merge_sort operation
+    and also the time complexity of it's own for loop. The time complexity of the merge_sort is O(nlog(n)) and the
+    time complexity of the for loop is O(n).
+    The total time complexity is therefor O(n) + O(nlog(n)), since the O(nlog(n)) is of a higher order than the former
+    the time complexity of the rearrange_digits function can be taken as O(nlog(n))
+
+# Space Complexity
+    The space complexity is of rearrange_digits is O(n) since it has to store the entire array temporarily
