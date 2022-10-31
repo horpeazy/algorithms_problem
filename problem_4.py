@@ -14,11 +14,14 @@ def sort_012(input_list):
     index = 0
 
     while index <= index_2:
-        if index >= index_0 and input_list[index] == 0:
-            input_list[index_0], input_list[index] = input_list[index], input_list[index_0]
+        if input_list[index] == 0:
+            input_list[index] = input_list[index_0]
+            input_list[index_0] = 0
             index_0 += 1
+            index += 1
         elif input_list[index] == 2:
-            input_list[index_2], input_list[index] = input_list[index], input_list[index_2]
+            input_list[index] = input_list[index_2]
+            input_list[index_2] = 2
             index_2 -= 1
         else:
             index += 1
