@@ -1,6 +1,3 @@
-from ast import Pass
-
-
 def sort_012(input_list):
     """
     Given an input array consisting on only 0, 1, and 2,

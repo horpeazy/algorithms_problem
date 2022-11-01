@@ -6,4 +6,4 @@
     the time complexity of the rearrange_digits function can be taken as O(nlog(n))
 
 # Space Complexity
-    The space complexity is of rearrange_digits is O(n) since it has to store the entire array temporarily
+    The space complexity of rearrange_digits is O(n) since it has to store the entire array temporarily

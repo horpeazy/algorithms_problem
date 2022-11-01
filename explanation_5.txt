@@ -1,5 +1,5 @@
 # Time Complexity
-    The time complexity of sort_012 is O(n)
+    The time complexity of the suffix method of the TrieNode class is O(nlogn)
 
 # Space Complexity
-    The space complexity is of sort_012 is O(1)
+    The space complexity of the suffix method of the TrieNode class is O(n)

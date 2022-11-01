@@ -4,9 +4,9 @@ def rearrange_digits(input_list):
     such that their sum is maximum.
 
     Args:
-       input_list(list): Input List
+        input_list(list): Input List
     Returns:
-       (int),(int): Two maximum sums
+        (int),(int): Two maximum sums
     """
     first = 0
     second = 0
@@ -25,9 +25,9 @@ def merge_sort(arr):
     Sort an array of elements using divide and conquer algorithm.
 
     Args:
-       arr(list): Input List
+        arr(list): Input List
     Returns:
-       (array): sorted array
+        (array): sorted array
     """
     if len(arr) <= 1:
         return arr
@@ -67,7 +67,6 @@ def merge(left, right):
     output += right[j:]
 
     return output
-
 
 def test_function(test_case):
     output = rearrange_digits(test_case[0])

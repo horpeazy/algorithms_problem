@@ -2,4 +2,4 @@
     The time complexity of sort_012 is O(n)
 
 # Space Complexity
-    The space complexity is of sort_012 is O(1)
+    The space complexity of sort_012 is O(1)

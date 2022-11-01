@@ -1,57 +1,81 @@
-## Represents a single node in the Trie
 class TrieNode:
     def __init__(self):
+        """ Initialize the node """
         self.children = {}
         self.is_word = False
-        self.next_word = False
-    
+        self.sub_word = False
+
     def insert(self, char):
+        """
+        Insert into the node
+
+        Args:
+            char(string): character to insert 
+        Return:
+            inserted node
+        """
         new_node = TrieNode()
         self.children[char] = new_node
         return new_node
-    
+
     def suffixes(self, suffix = ''):
-        ## Recursive function that collects the suffix for 
-        ## all complete words below this point
-        result = []
-        if self.next_word:
-            result.append("")
-        elif self.is_word and not self.next_word:
+        """
+        Recursive function that collects the suffix for
+        all complete words below this point
+
+        Args:
+            suffix(string): suffix 
+        Return:
+            list of suffixes
+        """
+        if self.is_word:                  # base case
             return [""]
-        
+
+        result = []
+        if self.sub_word:
+            result.append("")
+
         for char in self.children:
-            children = self.children[char].suffixes()
-            for child in children:
-                result.append(char + child)
-                
+            word_list = self.children[char].suffixes()
+            for word in word_list:
+                result.append(char + word)
+
         return result
-        
-        
-## The Trie itself containing the root node and insert/find functions
+
+
 class Trie:
     def __init__(self):
-        ## Initialize this Trie (add a root node)
+        """ Initialize the trie """
         self.root = TrieNode()
 
     def insert(self, word):
-        ## Add a word to the Trie
+        """
+        Insert a word into the trie 
+
+        Args:
+            word(string): path to insert
+        """
         current = self.root
         for char in word:
             if char in current.children:
                 if current.children[char].is_word:
-                    current.next_word = True
-                    new_node = current.insert(char)
-                    current = new_node
-                    continue
+                    current.children[char].sub_word = True
+                    current.children[char].is_word = False
                 current = current.children[char]
             else:
-                current.insert(char)
-                current = current.children[char]
+                current = current.insert(char)
         current.is_word = True
-        current.next_word = False
+        current.sub_word = False
 
     def find(self, prefix):
-        ## Find the Trie node that represents this prefix
+        """
+        Navigate the Trie to find a match for this prefix
+
+        Args:
+            prefix(string): prefix to find 
+        Return:
+            node for a match, or None for no match
+        """
         current = self.root
         for char in prefix:
             if char not in current.children:
@@ -59,6 +83,10 @@ class Trie:
             current = current.children[char]
         return current
 
+
+# ------------------------------------------------ #
+# Test Cases                                       #
+# ------------------------------------------------ #
 
 MyTrie = Trie()
 wordList = [
@@ -69,6 +97,7 @@ wordList = [
 for word in wordList:
     MyTrie.insert(word)
 
+from sys import prefix
 from ipywidgets import widgets
 from IPython.display import display
 from ipywidgets import interact
@@ -81,4 +110,21 @@ def f(prefix):
             print(prefix + " not found")
     else:
         print('')
-interact(f,prefix='')
+
+# Test 1
+interact(f,prefix='a')
+# nt
+# nthology
+# ntagonist
+# ntonym
+
+# Test 2
+interact(f, prefix='t')
+# rie
+# rigger
+# rigonometry
+# ripod
+
+# Test 3
+interact(f, prefix='g')
+# g not found

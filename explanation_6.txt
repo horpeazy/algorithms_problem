@@ -1,0 +1,5 @@
+# Time Complexity
+    The time complexity of the get_min_max function is O(n)
+
+# Space Complexity
+    The space complexity of get_min_max function is O(1)

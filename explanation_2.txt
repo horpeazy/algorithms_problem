@@ -4,4 +4,4 @@
     binary search with some tweaking
 
 # Space Complexity
-    The space complexity is of the solution is O(1)
+    The space complexity of the solution is O(1)

@@ -1,0 +1,6 @@
+# Time Complexity
+    The main fucntionality of the router which is lookup has a time complecxity of O(n), the insert method also
+    has a time complexity of O(n)
+
+# Space Complexity
+    The space complexity of all methods is O(1)
